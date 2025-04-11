@@ -12,17 +12,17 @@
     <!-- <audio autoplay>
       <source src="Dinhhhhhhhhh.mp3" type="audio/mpeg" />
     </audio> -->
-    <audio id="audioPlayer">
+    <audio id="audioPlayer" loop>
       <source src="TRTD.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <script>
-        window.addEventListener('click', () => {
-            const audio = document.getElementById('audioPlayer');
-            if (audio.paused) {
-                audio.play();
-            }
-        });
+      const audio = document.getElementById('audioPlayer');
+      const playAudio = () => {
+        audio.play();
+        window.removeEventListener('click', playAudio); // chỉ chạy 1 lần
+      };
+      window.addEventListener('click', playAudio);
     </script>
     <!-- 星空html -->
     <!-- <div> -->
@@ -35,7 +35,6 @@
     <div class="title">
       <!-- EDIT HERE -->
       <!-- <h3 class="STARDUST1">2024</h3> -->
-      <h1 class="STARDUST2">Hiền</h1>
       <h3 class="STARDUST3">L O V E <strong>❤</strong> Y O U</h3>
       <img class="img" src="NH.jpg" alt="NH" />
       <canvas id="pinkboard"></canvas>
